@@ -1,12 +1,23 @@
 
 <h2>Workouts:</h2>
 
+<h2>{{ selectedWorkout.title | uppercase }} </h2>
 
-<ul class="workout">
-	<li *ngFor="let workout of workout">
-		<span>{{ workout.title }} Swim: {{ workout.swim }} Bike: {{ workout.bike }} Run: {{ workout.run }} Notes: {{ workout.notes }}</span> 
-	</li>
-</ul>
+
+<table class="workout">
+  <tr>
+  	<th>Title</th>
+    <th>Swim</th>
+    <th>Bike</th>
+    <th>Run</th>
+  </tr>
+  <tr *ngFor="let workout of workout" (click)="onSelect(workout)">
+    <td>{{workout.title}}</td>
+    <td>{{workout.swim}}</td>
+    <td>{{workout.bike}}</td>
+    <td>{{workout.run}}</td>
+  </tr> 
+</table>
 
 
 

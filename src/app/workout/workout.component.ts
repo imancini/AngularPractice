@@ -8,6 +8,11 @@ import { WORKOUTS } from '../mock-workouts';
   styleUrls: ['./workout.component.css']
 })
 export class WorkoutComponent implements OnInit {
+  selectedWorkout = Workout;
+
+  onSelect(workout: Workout): void {
+  	this.selectedWorkout = workout;
+  }
 
   workout = WORKOUTS;
 
