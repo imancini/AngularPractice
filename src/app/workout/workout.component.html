@@ -1,8 +1,21 @@
 
 <h2>Workouts:</h2>
 
-<h2>{{ selectedWorkout.title | uppercase }} </h2>
-
+<h2>{{ selectedWorkout.title }} </h2>
+<div>
+	<label>
+	   Title: <input [(ngModel)]="selectedWorkout.title" placeholder="Title">
+	   <br>
+	   Swim: <input [(ngModel)]="selectedWorkout.swim" placeholder="Swim">
+	   <br>
+	   Bike: <input [(ngModel)]="selectedWorkout.bike" placeholder="Bike">
+	   <br>
+	   Run: <input [(ngModel)]="selectedWorkout.run" placeholder="Run">
+	   <br>
+	   Notes: <input [(ngModel)]="selectedWorkout.notes" placeholder="notes">
+	</label> 
+	
+</div>
 
 <table class="workout">
   <tr>
@@ -10,12 +23,14 @@
     <th>Swim</th>
     <th>Bike</th>
     <th>Run</th>
+    <th>Notes</th>
   </tr>
   <tr *ngFor="let workout of workout" (click)="onSelect(workout)">
     <td>{{workout.title}}</td>
     <td>{{workout.swim}}</td>
     <td>{{workout.bike}}</td>
     <td>{{workout.run}}</td>
+    <td>{{workout.notes}}</td>
   </tr> 
 </table>
 
