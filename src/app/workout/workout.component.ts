@@ -10,7 +10,7 @@ import { WORKOUTS } from '../mock-workouts';
 export class WorkoutComponent implements OnInit {
   selectedWorkout = Workout;
 
-  onSelect(workout: Workout): void {
+  onSelect(workout: any): void {
   	this.selectedWorkout = workout;
   }
 

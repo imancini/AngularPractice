@@ -1,7 +1,8 @@
 
-<h2>Workouts:</h2>
+<div *ngIf="selectedWorkout">
+	<h2>{{ selectedWorkout.date }} {{ selectedWorkout.title }} </h2>
+</div>
 
-<h2>{{ selectedWorkout.title }} </h2>
 <div>
 	<label>
 	   Title: <input [(ngModel)]="selectedWorkout.title" placeholder="Title">
@@ -17,15 +18,17 @@
 	
 </div>
 
-<table class="workout">
+<table id="customers">
   <tr>
+  	<th>Date</th>
   	<th>Title</th>
     <th>Swim</th>
     <th>Bike</th>
     <th>Run</th>
     <th>Notes</th>
   </tr>
-  <tr *ngFor="let workout of workout" (click)="onSelect(workout)">
+  <tr *ngFor="let workout of workout; let date of date" (click)="onSelect(workout)">
+  	<td>{{workout.date}}</td>
     <td>{{workout.title}}</td>
     <td>{{workout.swim}}</td>
     <td>{{workout.bike}}</td>
