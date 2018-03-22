@@ -1,9 +1,9 @@
 
-<div *ngIf="selectedWorkout">
+<div *ngIf="selectedWorkout" style="text-align:center">
 	<h2>{{ selectedWorkout.date }} {{ selectedWorkout.title }} </h2>
 </div>
 
-<div>
+<div style="text-align:center">
 	<label>
 	   Title: <input [(ngModel)]="selectedWorkout.title" placeholder="Title">
 	   <br>
